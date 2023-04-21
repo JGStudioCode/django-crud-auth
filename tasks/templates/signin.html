@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="container mt-4">    
+   <section class="card-body">
+       <div class="row">
+           <div class="col-md-4 offset-md-4">
+               <form action="/signin/" method="POST" class="card card-body">
+                    <h1 class="text-center">Sign In</h1>
+                    {% if error != None %}
+                        <div class="alert alert-danger" role="alert">
+                            {{error}}    
+                        </div>              
+                    {% endif %}
+                    {% csrf_token %}
+                    <div class="col-12 mt-3">
+                        <label for="lbusername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <label for="lbpassword" class="form-label">Your Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="**********">
+                    </div>
+
+                   {# Formulario antiguo creado con Django  {{form.as_p}}      #}
+                    <button class="btn btn-primary mt-4">SignIn</button>
+               </form>
+           </div>
+       </div>    
+   </section>
+</main>
+
+
+{% endblock %}

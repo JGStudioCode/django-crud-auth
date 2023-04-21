@@ -1,0 +1,6 @@
+.card{
+    border: 1px solid #03419d;
+}
+.navbar {background: #03419d;}
+.navbar a{color: white;}
+.navbar a:hover{color: #FFDD4D;}

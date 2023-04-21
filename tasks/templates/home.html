@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container mt-4">    
+    <section class="card-body">
+
+        <h1 class="display-3 text-center">Django CRUD Application</h1>
+        <h3 class="display-6 text-center">with db.sqlite3 local - postgrest web </h3>
+        </p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, odit quibusdam. Neque vitae possimus
+        assumenda maiores qui minus similique ut dolore voluptatum, ex, consequuntur optio repellat sapiente rerum
+        voluptatibus dolores. Repudiandae aperiam culpa quidem modi, beatae quaerat placeat veniam. Aliquam quasi at
+        tempore vero itaque culpa officiis reprehenderit modi sunt!</p>
+        </p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, odit quibusdam. Neque vitae possimus
+        assumenda maiores qui minus similique ut dolore voluptatum, ex, consequuntur optio repellat sapiente rerum
+        voluptatibus dolores. Repudiandae aperiam culpa quidem modi, beatae quaerat placeat veniam. Aliquam quasi at
+        tempore vero itaque culpa officiis reprehenderit modi sunt!</p>
+        </p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, odit quibusdam. Neque vitae possimus
+        assumenda maiores qui minus similique ut dolore voluptatum, ex, consequuntur optio repellat sapiente rerum
+        voluptatibus dolores. Repudiandae aperiam culpa quidem modi, beatae quaerat placeat veniam. Aliquam quasi at
+        tempore vero itaque culpa officiis reprehenderit modi sunt!</p>
+        <br>
+        <figure>
+            <blockquote class="blockquote" style="font-size: 16px;">
+              <p>CRUD create 20/04/2023 using Python 3.11.2 with Framework Django 4.2 and Visual Code - Bootstrap 5.3</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                JG Studio Code
+            </figcaption>
+          </figure>
+
+        {% if user.is_authenticated %}
+        <div class="text-center">
+            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+        </div>
+        {% else %}
+        <div class="text-center">
+            <a href="{% url 'signin' %}" class="btn btn-primary">SignIn</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary">signUp</a>
+        </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container mt-4">    
+    <section class="card-body">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">                
+                <form method="POST" class="card card-body">
+                    <h1>Task Detail</h1>
+                    <!-- <h5>{{task.title}}</h5> -->
+                    {{error}}
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="btn btn-warning mt-4">Update</button>
+                </form>
+                <!-- Marcar como completo la tarea, se envia el action a la vista con el ID -->
+                <form action="{% url 'complete_task' task.id %}" method="POST" class="card card-body">
+                    {% csrf_token %}
+                    <button class="btn btn-success">Complete</button>
+                </form>
+                <!-- Eliminar tarea -->
+                <form action="{% url 'delete_task' task.id %}" method="POST" class="card card-body">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                <!-- Cancelar y regresar a lista -->
+                <form action="{% url 'tasks' %}" method="POST" class="card card-body">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

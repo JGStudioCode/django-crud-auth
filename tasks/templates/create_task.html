@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container mt-4">    
+    <section class="card-body">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">                
+                <form action="/tasks/create/" method="POST" class="card card-body">
+                    <h1>Create Task</h1>
+                    {{error}}
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="btn btn-primary mt-4">Save</button>
+                </form>
+                <!-- Cancelar y regresar a lista -->
+                <form action="{% url 'tasks' %}" method="POST" class="card card-body">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

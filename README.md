@@ -7,7 +7,7 @@ You can download [here](https://github.com/JGStudioCode/django-crud-auth/archive
 
 ## Credits
 
-This software uses the following open source packages:
+This software uses the following open source packages: Here
 
 - [Pyhton](https://www.python.org/)
 - [Django](https://www.djangoproject.com/)

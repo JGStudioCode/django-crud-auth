@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 # pip install psycopg2-binary - Para postgres
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/mysite', #esto es el plan b. Si no vale dj_database_url.config(), pues que coja el defaul
+        default='postgresql://postgres:postgres@localhost:5432/postgres', #esto es el plan b. Si no vale dj_database_url.config(), pues que coja el defaul
         conn_max_age=600 #esto es el plan b. Si no vale dj_database_url.config(), pues que coja el defaul
     )}
 # FIN RENDER
@@ -142,7 +142,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 #RENDER
 # PASO 4
 # Following settings only make sense on production and may break development environments.
